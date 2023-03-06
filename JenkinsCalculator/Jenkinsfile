@@ -24,11 +24,11 @@ pipeline {
             steps {
                 sh 'mvn -f ./JenkinsCalculator/pom.xml -Dtest=CalculatorTestThorough test'
             }
-            post {
+            /* post {
                 success {
                     junit './JenkinsCalculator/target/surefire-reports/**/*.xml'
                 }
-            }
+            }*/
         }
         stage('Package') {
             steps {
