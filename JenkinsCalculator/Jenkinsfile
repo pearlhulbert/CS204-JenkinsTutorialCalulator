@@ -26,15 +26,15 @@ pipeline {
             }
             post {
                 success {
-                    junit 'target/surefire-reports/**/*.xml'
+                    junit './JenkinsCalculator/target/surefire-reports/**/*.xml'
                 }
             }
         }
         stage('Package') {
             steps {
                 sh 'mvn -f ./JenkinsCalculator/pom.xml package'
-                archiveArtifacts artifacts: 'src/**/*.java'
-                archiveArtifacts artifacts: 'target/*.jar'
+                archiveArtifacts artifacts: './JenkinsCalculator/src/**/*.java'
+                archiveArtifacts artifacts: './JenkinsCalculator/target/*.jar'
             }
         }
     }
